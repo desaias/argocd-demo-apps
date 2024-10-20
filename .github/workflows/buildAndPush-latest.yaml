@@ -2,6 +2,9 @@ name: Build and Push Docker Image
 
 on:
   push:
+    paths:
+      - '**/*.go'
+      - 'build/Dockerfile'
     branches:
       - main  # Change this to your default branch
 
