@@ -3,6 +3,9 @@ name: Build and Push Docker Image on Release
 
 on:
   release:
+    paths:
+      - '**/*.go'
+      - 'build/Dockerfile'
     types: [published]  # Trigger when a release is published
 
 jobs:
