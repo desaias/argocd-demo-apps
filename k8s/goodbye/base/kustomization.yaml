@@ -1,0 +1,4 @@
+resources:
+  - goodbye-namespace.yaml
+  - goodbye-deployment.yaml
+  - goodbye-service.yaml

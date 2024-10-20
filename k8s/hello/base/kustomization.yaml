@@ -1,0 +1,4 @@
+resources:
+  - hello-namespace.yaml
+  - hello-deployment.yaml
+  - hello-service.yaml

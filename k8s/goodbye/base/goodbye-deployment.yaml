@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goodbye
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: goodbye
+  template:
+    metadata:
+      labels:
+        app: goodbye
+    spec:
+      containers:
+      - name: goodbye
+        image: image-name-replaced-with-kustomize
+        command: ["goodbye"]
+        ports:
+        - name: http
+          containerPort: 80

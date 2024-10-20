@@ -1,0 +1,9 @@
+resources:
+  - ../../base
+
+namespace: goodbye
+
+images:
+  - name: image-name-replaced-with-kustomize
+    newName: argocd-demo
+    newTag: latest
