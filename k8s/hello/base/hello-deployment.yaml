@@ -13,19 +13,20 @@ spec:
         app: hello
     spec:
       containers:
-      - name: hello
-        image: image-name-replaced-with-kustomize
-        command: ["./hello"]
-        ports:
-        - name: http
-          containerPort: 80
+      - command:
+        - ./hello
         env:
         - name: PORT
-          value: 80
+          value: "80"
+        image: image-name-replaced-with-kustomize
+        name: hello
+        ports:
+        - containerPort: 80
+          name: http
         resources:
-          requests:
-            memory: "16Mi"
-            cpu: "5m"
           limits:
-            memory: "32Mi"
-            cpu: "10m"
+            cpu: 10m
+            memory: 32Mi
+          requests:
+            cpu: 5m
+            memory: 16Mi

@@ -13,19 +13,20 @@ spec:
         app: goodbye
     spec:
       containers:
-      - name: goodbye
-        image: image-name-replaced-with-kustomize
-        command: ["./goodbye"]
-        ports:
-        - name: http
-          containerPort: 80
+      - command:
+        - ./goodbye
         env:
         - name: PORT
-          value: 80
-        resources:
-          requests:
-            memory: "16Mi"
-            cpu: "5m"
-          limits:
-            memory: "32Mi"
-            cpu: "10m"
+          value: "80"
+        image: image-name-replaced-with-kustomize
+        name: goodbye
+        ports:
+        - containerPort: 80
+          name: http
+      resources:
+        limits:
+          cpu: 10m
+          memory: 32Mi
+        requests:
+          cpu: 5m
+          memory: 16Mi
