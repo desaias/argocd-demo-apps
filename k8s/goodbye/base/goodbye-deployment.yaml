@@ -19,3 +19,13 @@ spec:
         ports:
         - name: http
           containerPort: 80
+        env:
+        - name: PORT
+          value: 80
+        resources:
+          requests:
+            memory: "16Mi"
+            cpu: "5m"
+          limits:
+            memory: "32Mi"
+            cpu: "10m"
