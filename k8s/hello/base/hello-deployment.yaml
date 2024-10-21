@@ -15,7 +15,7 @@ spec:
       containers:
       - name: hello
         image: image-name-replaced-with-kustomize
-        command: ["hello"]
+        command: ["./hello"]
         ports:
         - name: http
           containerPort: 80
