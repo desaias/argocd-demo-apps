@@ -1,9 +1,15 @@
 resources:
-  - ../../base
+- ../../base
 
 namespace: goodbye
 
 images:
-  - name: image-name-replaced-with-kustomize
-    newName: desaias/argocd-demo-apps
-    newTag: latest
+- name: image-name-replaced-with-kustomize
+  newName: desaias/argocd-demo-apps
+  newTag: v1.0.0
+
+patches:
+- target:
+    name: goodbye
+    kind: Deployment
+  path: deployment-patches.yaml

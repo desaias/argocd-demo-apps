@@ -1,9 +1,15 @@
 resources:
-  - ../../base
+- ../../base
 
 namespace: hello
 
 images:
-  - name: image-name-replaced-with-kustomize
-    newName: desaias/argocd-demo-apps
-    newTag: latest
+- name: image-name-replaced-with-kustomize
+  newName: desaias/argocd-demo-apps
+  newTag: v1.0.0
+
+patches:
+- target:
+    name: hello
+    kind: Deployment
+  path: deployment-patches.yaml
